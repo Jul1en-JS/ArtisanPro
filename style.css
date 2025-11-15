@@ -227,40 +227,51 @@ footer {
 /*         MENU BURGER          */
 /* ============================ */
 
+/* Bouton burger général */
 .burger {
-    display: none; /* sera affiché en mobile */
+    display: none;               /* masqué sur desktop */
     flex-direction: column;
     cursor: pointer;
-    background: var(--secondary); /* ← fond bleu foncé */
-    padding: 10px; /* espace autour des barres */
-    border-radius: 5px; /* coins arrondis */
+    background: var(--secondary); /* fond derrière les trois barres */
+    padding: 8px;                 /* espace autour des barres */
+    border-radius: 5px;           /* arrondi du fond */
+    z-index: 1000;                /* pour être au-dessus du contenu */
 }
 
+/* Les trois barres */
 .burger span {
     height: 3px;
     width: 25px;
-    background: white;
-    margin: 4px;
+    background: white;  /* couleur des barres */
+    margin: 4px 0;
     border-radius: 3px;
 }
 
 /* Version mobile */
 @media (max-width: 768px) {
+    .burger {
+        display: flex; /* afficher le bouton burger */
+    }
+
     nav {
         display: none;
         flex-direction: column;
         text-align: center;
         gap: 10px;
-        background: var(--primary);
-        padding-bottom: 10px;
+        background: var(--primary); /* fond du menu ouvert */
+        padding: 10px 0;
     }
 
     nav.open {
-        display: flex;
+        display: flex; /* menu visible quand burger cliqué */
     }
 
-    .burger {
-        display: flex;
+    nav a {
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        display: block;
+        text-decoration: none;
     }
 }
 
