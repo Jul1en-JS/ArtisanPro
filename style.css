@@ -231,6 +231,9 @@ footer {
     display: none; /* sera affiché en mobile */
     flex-direction: column;
     cursor: pointer;
+    background: var(--secondary); /* ← fond bleu foncé */
+    padding: 10px; /* espace autour des barres */
+    border-radius: 5px; /* coins arrondis */
 }
 
 .burger span {
@@ -510,34 +513,6 @@ footer {
     }
 }
 
-/* Menu burger sur mobile */
-@media (max-width: 768px) {
-    .burger {
-        display: flex;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        background: #1e88e5;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .nav a {
-        color: white;
-        padding: 10px;
-        font-size: 18px;
-        display: block;
-        text-decoration: none;
-    }
-}
-
 /* ============================ */
 /*       PAGE TARIFS           */
 /* ============================ */
@@ -654,32 +629,6 @@ footer {
     .cta-tarifs .btn {
         font-size: 16px;
         padding: 12px 25px;
-    }
-
-    /* Menu burger visible */
-    .burger {
-        display: flex;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        background: #1e88e5;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .nav a {
-        color: white;
-        padding: 10px;
-        font-size: 18px;
-        display: block;
-        text-decoration: none;
     }
 }
 
