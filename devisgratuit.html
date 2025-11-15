@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis gratuit - ArtisanPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barre de progression -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">ArtisanPro</div>
+
+        <button class="burger" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="main-nav">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="devisgratuit.html">Devis gratuit</a>
+            <a href="contact.html" class="btn-menu">Contact</a>
+            <a href="apropos.html">À propos</a>
+        </nav>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="devis-header">
+        <h1>Demandez votre devis gratuit</h1>
+        <p>Remplissez le formulaire et recevez un devis personnalisé rapidement.</p>
+    </section>
+
+    <!-- Formulaire de devis -->
+    <section class="devis-form-section">
+        <form id="devis-form" action="https://formspree.io/f/mkgkbqar" method="POST">
+            <input type="hidden" name="_format" value="json">
+
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" required>
+
+            <label for="service">Service souhaité</label>
+            <select id="service" name="service" required>
+                <option value="">-- Sélectionnez un service --</option>
+                <option value="depannage">Dépannage</option>
+                <option value="installation">Installation</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="renovation">Rénovation</option>
+            </select>
+
+            <label for="details">Détails supplémentaires</label>
+            <textarea id="details" name="details" rows="4"></textarea>
+
+            <button type="submit" class="btn">Envoyer la demande</button>
+            <p id="form-message"></p>
+        </form>
+    </section>
+
+    <!-- JS -->
+    <script>
+
+        // Barre de progression
+        const scrollProgress = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + "%";
+        });
+
+        // Menu burger mobile
+        const burger = document.getElementById('burger-btn');
+        const nav = document.getElementById('main-nav');
+        if(burger){
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('open');
+            });
+        }
+
+        // Formulaire Devis Gratuit avec Formspree
+        const devisForm = document.getElementById('devis-form');
+        const formMessage = document.getElementById('form-message');
+
+        if (devisForm) {
+            devisForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(devisForm);
+
+                fetch(devisForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        formMessage.textContent = "Merci ! Votre demande a été envoyée avec succès.";
+                        formMessage.style.color = "green";
+                        devisForm.reset();
+                    } else {
+                        formMessage.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                        formMessage.style.color = "red";
+                    }
+                })
+                .catch(() => {
+                    formMessage.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                    formMessage.style.color = "red";
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - ArtisanPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barre de progression -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">ArtisanPro</div>
+
+        <button class="burger" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="main-nav">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="devisgratuit.html">Devis gratuit</a>
+            <a href="contact.html">Contact</a>
+            <a href="apropos.html" class="btn-menu">À propos</a>
+        </nav>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="apropos-header anim">
+        <h1>Qui sommes-nous ?</h1>
+        <p>ArtisanPro, c’est une équipe d’artisans qualifiés qui simplifie votre quotidien avec des services fiables et transparents.</p>
+    </section>
+
+    <!-- Section Valeurs -->
+    <section class="apropos-valeurs anim">
+        <h2>Nos valeurs</h2>
+        <div class="valeurs-container">
+            <div class="valeur-card">
+                <span>✔</span>
+                <h3>Fiabilité</h3>
+                <p>Nous respectons nos engagements et vos délais.</p>
+            </div>
+            <div class="valeur-card">
+                <span>✔</span>
+                <h3>Transparence</h3>
+                <p>Des tarifs clairs et un suivi de chantier transparent.</p>
+            </div>
+            <div class="valeur-card">
+                <span>✔</span>
+                <h3>Qualité</h3>
+                <p>Des interventions réalisées avec soin et professionnalisme.</p>
+            </div>
+            <div class="valeur-card">
+                <span>✔</span>
+                <h3>Proximité</h3>
+                <p>Nous sommes proches de nos clients et à l’écoute de leurs besoins.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2 class="anim">Nos artisans</h2>
+        <div class="team-members">
+
+            <div class="member anim">
+                <img src="images/artisan1.jpg" alt="Jean Dupont, électricien">
+                <h4>Jean Dupont</h4>
+                <p>Électricien qualifié avec 10 ans d'expérience.</p>
+            </div>
+
+            <div class="member anim">
+                <img src="images/artisan2.jpg" alt="Marie Leroy, plombière">
+                <h4>Marie Leroy</h4>
+                <p>Plombière spécialisée en installations domestiques.</p>
+            </div>
+
+            <div class="member anim">
+                <img src="images/artisan3.jpg" alt="Paul Martin, maçon">
+                <h4>Paul Martin</h4>
+                <p>Maçon expérimenté, spécialiste des travaux de construction.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- JS -->
+    <script>
+
+        // Barre de progression
+        const scrollProgress = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + "%";
+        });
+
+        // Menu burger mobile
+        const burger = document.getElementById('burger-btn');
+        const nav = document.getElementById('main-nav');
+        if(burger){
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('open');
+            });
+        }
+
+        // Animation au scroll pour Apropos
+        const animItems = document.querySelectorAll('.anim');
+
+        const observerAnim = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        animItems.forEach(item => observerAnim.observe(item));
+    </script>
+
+</body>
+</html>

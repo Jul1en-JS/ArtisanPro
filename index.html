@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Pro - Plombier & Électricien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Barre de progression -->
+
+    <div id="scroll-progress"></div>
+
+    <!-- ===================== -->
+    <!--       HEADER          -->
+    <!-- ===================== -->
+
+    <header>
+        <div class="logo">ArtisanPro</div>
+
+        <!-- ===== MENU BURGER HTML À AJOUTER ICI ===== -->
+
+        <button class="burger" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="main-nav">
+            <a href="#hero">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="devisgratuit.html">Devis gratuit</a>
+            <a href="contact.html" class="btn-menu">Contact</a>
+            <a href="apropos.html">À propos</a>
+        </nav>
+    </header>
+
+    <!-- ===================== -->
+    <!--      SECTION HERO     -->
+    <!-- ===================== -->
+    <section id="hero" class="reveal">
+        <h1>Plombier & Électricien proche de chez vous</h1>
+        <p>Dépannage rapide – devis gratuit – intervention 7j/7</p>
+
+        <div class="cta">
+            <a href="tel:+33600000000" class="btn-call">📞 Appeler maintenant</a>
+            <a href="devisgratuit.html" class="btn-devis">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!--    SERVICES RAPIDES   -->
+    <!-- ===================== -->
+    <section id="services" class="reveal">
+        <h2>Nos services</h2>
+
+        <div class="service-list">
+            <div class="service">
+                <h3>🔧 Dépannage urgent</h3>
+                <p>Intervention en moins d’1h pour vos urgences.</p>
+            </div>
+
+            <div class="service">
+                <h3>💡 Électricité générale</h3>
+                <p>Installation, rénovation et mises aux normes.</p>
+            </div>
+
+            <div class="service">
+                <h3>🚰 Plomberie complète</h3>
+                <p>Fuites, chauffe-eau, salles de bain clés en main.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!--    AVANTAGES          -->
+    <!-- ===================== -->
+    <section id="avantages" class="reveal">
+        <h2>Pourquoi nous choisir ?</h2>
+
+        <ul>
+            <li>✔ Intervention rapide</li>
+            <li>✔ Devis gratuit</li>
+            <li>✔ Artisan qualifié</li>
+            <li>✔ 10 ans d’expérience</li>
+            <li>✔ Garantie décennale</li>
+        </ul>
+    </section>
+
+    <!-- ===================== -->
+    <!--    DEVIS GRATUIT         -->
+    <!-- ===================== -->
+    <section id="devis" class="reveal">
+        <h2>Devis rapide</h2>
+
+        <label>Type de service :</label>
+        <select id="type-service">
+            <option value="depannage">Dépannage</option>
+            <option value="electricite">Électricité</option>
+            <option value="plomberie">Plomberie</option>
+        </select>
+
+        <label>Urgence :</label>
+        <select id="urgence">
+            <option value="normal">Normal</option>
+            <option value="urgent">Urgent</option>
+        </select>
+
+        <p id="estimation">Estimation : -- €</p>
+    </section>
+
+    <!-- ===================== -->
+    <!--    CARROUSEL D'AVIS   -->
+    <!-- ===================== -->
+    <section id="avis" class="reveal">
+        <h2>Avis Clients</h2>
+
+        <div class="carousel">
+            <div class="avis">“Super intervention rapide, très pro !” — Marc</div>
+            <div class="avis">“Travail propre et prix honnête.” — Julie</div>
+            <div class="avis">“Disponible même le dimanche, merci !” — Karim</div>
+        </div>
+
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+    </section>
+
+    <!-- ===================== -->
+    <!--    CALL TO ACTION     -->
+    <!-- ===================== -->
+    <section id="action" class="reveal">
+        <h2>Besoin d'un artisan maintenant ?</h2>
+        <a href="contact.html" class="btn-big">Demander un devis gratuit</a>
+    </section>
+
+    <!-- ===================== -->
+    <!--       FOOTER          -->
+    <!-- ===================== -->
+    <footer>
+        <p>© 2025 ArtisanPro - Tous droits réservés.</p>
+        <p>Plombier & Électricien – Saint Leu La Forêt</p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
