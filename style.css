@@ -234,7 +234,6 @@ footer {
     cursor: pointer;
     background: var(--secondary); /* fond derrière les trois barres */
     border: none;                 /* enlève le gris par défaut */
-    padding: 8px;                 /* espace autour des barres */
     border-radius: 5px;           /* arrondi du fond */
     z-index: 1000;                /* pour être au-dessus du contenu */
 }
