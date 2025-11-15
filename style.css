@@ -234,7 +234,7 @@ footer {
     cursor: pointer;
     background: var(--secondary);
     border: none;
-    padding: 8px 0;           /* juste un peu de padding vertical */
+    padding: 4px 0;           /* juste un peu de padding vertical */
     width: 60px;               /* largeur fixe pour faire un rectangle */
     border-radius: 5px;
     align-items: center;       /* centre les barres horizontalement */
